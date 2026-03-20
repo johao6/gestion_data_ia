@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 app.include_router(docker_router, prefix="/docker", tags=["docker"])
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def read_root():
     return {"message": "API de Gestión de Data e IA operativa", "docs": "/docs"}
 
